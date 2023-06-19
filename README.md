@@ -5,3 +5,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/3acdf5dae7c83ab1953c/maintainability)](https://codeclimate.com/github/olya889/frontend-project-46/maintainability)
 
+[![asciicast](https://asciinema.org/a/XWZ7yLW9xwfEQ5W5llqIV6wre.svg)](https://asciinema.org/a/XWZ7yLW9xwfEQ5W5llqIV6wre)
+
+
