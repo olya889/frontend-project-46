@@ -1,13 +1,16 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
+import yaml from 'js-yaml';
 
-const getFileContentAsObject = (filePath) => {
-  const extension = path.extname(filePath.toString()).toLowerCase();
+const parse = (content, extension) => {
+//  const extension = path.extname(filePath.toString()).toLowerCase();
+//  const content = fs.readFileSync(filePath, { encoding: 'utf8' });
   if (extension === '.json') {
-    const content = fs.readFileSync(filePath, { encoding: 'utf8' });
     return JSON.parse(content);
+  } if (extension === '.yml' || extension === '.yaml') {
+    return yaml.load(content);
   }
   return '';
 };
 
-export default getFileContentAsObject;
+export default parse;
