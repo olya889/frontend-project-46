@@ -7,6 +7,9 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/3acdf5dae7c83ab1953c/test_coverage)](https://codeclimate.com/github/olya889/frontend-project-46/test_coverage)
 
+#### JSON
 [![asciicast](https://asciinema.org/a/XWZ7yLW9xwfEQ5W5llqIV6wre.svg)](https://asciinema.org/a/XWZ7yLW9xwfEQ5W5llqIV6wre)
 
+#### YAML
+[![asciicast](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk.svg)](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk)
 
