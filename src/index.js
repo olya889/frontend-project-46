@@ -4,11 +4,6 @@ import path from 'path';
 import _ from 'lodash';
 import getFileContentAsObject from './parse.js';
 
-// const getFileContentAsObject = (filePath) => {
-//  const content = fs.readFileSync(filePath, { encoding: 'utf8' });
-//  return JSON.parse(content);
-// };
-
 const getAbsolutePath = (givenPath) => path.resolve(cwd(), givenPath);
 
 const compareProperties = (object1, object2, propertie) => {
