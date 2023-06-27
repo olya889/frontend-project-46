@@ -44,5 +44,3 @@ const expectedResult = '{\n'
 + '}';
 
 export default expectedResult;
-
-console.log(expectedResult);
