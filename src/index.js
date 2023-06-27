@@ -15,17 +15,17 @@ const getContentAsObject = (filePath) => {
   return parse(content, extension);
 };
 
-const compareProperties = (object1, object2, propertie) => {
-  if (Object.hasOwn(object1, propertie) && Object.hasOwn(object2, propertie)) {
-    if (object1[propertie] === object2[propertie]) {
-      return `   ${propertie}: ${object1[propertie]}`;
+const compareProperties = (objectBefore, objectAfter, propertie) => {
+  if (Object.hasOwn(objectBefore, propertie) && Object.hasOwn(objectAfter, propertie)) {
+    if (objectBefore[propertie] === objectAfter[propertie]) {
+      return `   ${propertie}: ${objectBefore[propertie]}`;
     }
-    return ` - ${propertie}: ${object1[propertie]}\n  + ${propertie}: ${object2[propertie]}`;
+    return ` - ${propertie}: ${objectBefore[propertie]}\n  + ${propertie}: ${objectAfter[propertie]}`;
   }
-  if (!Object.hasOwn(object1, propertie) && Object.hasOwn(object2, propertie)) {
-    return ` + ${propertie}: ${object2[propertie]}`;
+  if (!Object.hasOwn(objectBefore, propertie) && Object.hasOwn(objectAfter, propertie)) {
+    return ` + ${propertie}: ${objectAfter[propertie]}`;
   }
-  return ` - ${propertie}: ${object1[propertie]}`;
+  return ` - ${propertie}: ${objectBefore[propertie]}`;
 };
 
 const genDiff = (path1, path2) => {
