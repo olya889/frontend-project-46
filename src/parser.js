@@ -2,11 +2,11 @@
 // import path from 'path';
 import yaml from 'js-yaml';
 
-const parse = (content, extension) => {
+const parse = (file, extension) => {
   if (extension === '.json') {
-    return JSON.parse(content);
+    return JSON.parse(file);
   } if (extension === '.yml' || extension === '.yaml') {
-    return yaml.load(content);
+    return yaml.load(file);
   }
   return '';
 };
