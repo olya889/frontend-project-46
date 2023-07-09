@@ -2,7 +2,7 @@ import fs from 'fs';
 import { cwd } from 'node:process';
 import path from 'path';
 import _ from 'lodash';
-import parse from './parse.js';
+import parse from './parser.js';
 
 const getAbsolutePath = (givenPath) => path.resolve(cwd(), givenPath);
 const getExtension = (filePath) => path.extname(filePath.toString()).toLowerCase();
