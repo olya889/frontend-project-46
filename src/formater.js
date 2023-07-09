@@ -1,5 +1,6 @@
 const stylish = (structureOfDiff) => {
   const makeDataAsString = (data, depth) => {
+    if (data === '') return ' ';
     if (typeof data === 'object' && data !== null) {
       const entries = Object.entries(data);
       const currentIndent = ' '.repeat(depth * 4);
