@@ -49,12 +49,10 @@ const makeDiffStructure = (objectBefore, objectAfter) => {
   return diffStructure;
 };
 
-const genDiff = (path1, path2) => {
+const genDiff = (path1, path2, formater = stylish) => {
   const contentOfFile1 = getContentAsObject(path1);
   const contentOfFile2 = getContentAsObject(path2);
-  return stylish(makeDiffStructure(contentOfFile1, contentOfFile2));
+  return formater(makeDiffStructure(contentOfFile1, contentOfFile2));
 };
-
-console.log(genDiff('__fixtures__/before.json', '__fixtures__/after.json'));
 
 export default genDiff;
