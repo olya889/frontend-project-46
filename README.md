@@ -13,3 +13,7 @@
 #### YAML
 [![asciicast](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk.svg)](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk)
 
+#### NESTED FILES
+
+[![asciicast](https://asciinema.org/a/596086.svg)](https://asciinema.org/a/596086)
+
