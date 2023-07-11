@@ -3,7 +3,7 @@ import { cwd } from 'node:process';
 import path from 'path';
 import _ from 'lodash';
 import parse from './parser.js';
-import stylish from './formater.js';
+import stylish from './formatters/stylish.js';
 
 const getAbsolutePath = (givenPath) => path.resolve(cwd(), givenPath);
 const getExtension = (filePath) => path.extname(filePath.toString()).toLowerCase();
