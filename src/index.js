@@ -4,6 +4,7 @@ import path from 'path';
 import _ from 'lodash';
 import parse from './parser.js';
 import stylish from './formatters/stylish.js';
+import getFormatterName from './formatters/index.js';
 
 const getAbsolutePath = (givenPath) => path.resolve(cwd(), givenPath);
 const getExtension = (filePath) => path.extname(filePath.toString()).toLowerCase();
@@ -49,10 +50,11 @@ const makeDiffStructure = (objectBefore, objectAfter) => {
   return diffStructure;
 };
 
-const genDiff = (path1, path2, formater = stylish) => {
+const genDiff = (path1, path2, formatName = stylish) => {
   const contentOfFile1 = getContentAsObject(path1);
   const contentOfFile2 = getContentAsObject(path2);
-  return formater(makeDiffStructure(contentOfFile1, contentOfFile2));
+  const formatter = getFormatterName(formatName);
+  return formatter(makeDiffStructure(contentOfFile1, contentOfFile2));
 };
 
 export default genDiff;
