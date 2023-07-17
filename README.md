@@ -14,6 +14,7 @@
 [![asciicast](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk.svg)](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk)
 
 #### NESTED FILES
+
 ### stylish format
 
 [![asciicast](https://asciinema.org/a/596086.svg)](https://asciinema.org/a/596086)
@@ -21,4 +22,8 @@
 ### plain format
 
 [![asciicast](https://asciinema.org/a/5IDN2Hec1y1YSP6NEpAfBB1GH.svg)](https://asciinema.org/a/5IDN2Hec1y1YSP6NEpAfBB1GH)
+
+### JSON format
+
+[![asciicast](https://asciinema.org/a/597283.svg)](https://asciinema.org/a/597283)
 
