@@ -22,3 +22,10 @@ test('plain format', () => {
   expect(genDiff(getFixturePath('before.yml'), getFixturePath('after.yml'), 'plain')).toEqual(expectedResult);
   expect(genDiff(getFixturePath('before.yaml'), getFixturePath('after.yaml'), 'plain')).toEqual(expectedResult);
 });
+
+test('json format', () => {
+  const expectedResult = fs.readFileSync(getFixturePath('expected_result.json'), { encoding: 'utf8' });
+  expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json'), 'json')).toEqual(expectedResult);
+  expect(genDiff(getFixturePath('before.yml'), getFixturePath('after.yml'), 'json')).toEqual(expectedResult);
+  expect(genDiff(getFixturePath('before.yaml'), getFixturePath('after.yaml'), 'json')).toEqual(expectedResult);
+});
