@@ -17,10 +17,11 @@ const getContentAsObject = (filePath) => {
   return parse(content, extension);
 };
 
-const genDiff = (path1, path2, formatName = stylish) => {
+const genDiff = (path1, path2, formatName = 'stylish') => {
   const contentOfFile1 = getContentAsObject(path1);
   const contentOfFile2 = getContentAsObject(path2);
   const formatter = getFormatterName(formatName);
+  console.log(`formatname: ${formatName}`);
   return formatter(makeDiffStructure(contentOfFile1, contentOfFile2));
 };
 
