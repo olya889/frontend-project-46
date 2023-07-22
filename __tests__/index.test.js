@@ -9,11 +9,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', filename);
 
-test('stylish path', () => {
+test('default format', () => {
   const expectedResult = fs.readFileSync(getFixturePath('stylish_expected_result.txt'), { encoding: 'utf8' });
   expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json'))).toEqual(expectedResult);
   expect(genDiff(getFixturePath('before.yml'), getFixturePath('after.yml'))).toEqual(expectedResult);
   expect(genDiff(getFixturePath('before.yaml'), getFixturePath('after.yaml'))).toEqual(expectedResult);
+});
+
+test('stylish format', () => {
+  const expectedResult = fs.readFileSync(getFixturePath('stylish_expected_result.txt'), { encoding: 'utf8' });
+  expect(genDiff(getFixturePath('before.json'), getFixturePath('after.json'), 'stylish')).toEqual(expectedResult);
+  expect(genDiff(getFixturePath('before.yml'), getFixturePath('after.yml'), 'stylish')).toEqual(expectedResult);
+  expect(genDiff(getFixturePath('before.yaml'), getFixturePath('after.yaml'), 'stylish')).toEqual(expectedResult);
 });
 
 test('plain format', () => {
