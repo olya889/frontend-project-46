@@ -2,7 +2,6 @@ import fs from 'fs';
 import { cwd } from 'node:process';
 import path from 'path';
 import parse from './parser.js';
-import stylish from './formatters/stylish.js';
 import getFormatterName from './formatters/index.js';
 import makeDiffStructure from './diff-structurer.js';
 
@@ -21,7 +20,6 @@ const genDiff = (path1, path2, formatName = 'stylish') => {
   const contentOfFile1 = getContentAsObject(path1);
   const contentOfFile2 = getContentAsObject(path2);
   const formatter = getFormatterName(formatName);
-  console.log(`formatname: ${formatName}`);
   return formatter(makeDiffStructure(contentOfFile1, contentOfFile2));
 };
 
