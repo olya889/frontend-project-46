@@ -1,6 +1,6 @@
 # Difference calculator
 
-### Hexlet tests and linter status:
+## Hexlet tests and linter status:
 [![Actions Status](https://github.com/olya889/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/olya889/frontend-project-46/actions)
 
 [![gendiff](https://github.com/olya889/frontend-project-46/actions/workflows/gendiff.yml/badge.svg)](https://github.com/olya889/frontend-project-46/actions/workflows/gendiff.yml)
@@ -40,7 +40,7 @@ gendiff file1.yaml file2.yaml
 [![asciicast](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk.svg)](https://asciinema.org/a/9wVumQR1EkZf3q9aO6kBgtYIk)
 
 
-### stylish format
+### Stylish format
 
 ```bash
 gendiff filepath1 filepath2
@@ -48,7 +48,7 @@ gendiff filepath1 filepath2
 
 [![asciicast](https://asciinema.org/a/596086.svg)](https://asciinema.org/a/596086)
 
-### plain format
+### Plain format
 
 ```bash
 gendiff -f plain filepath1 filepath2  
