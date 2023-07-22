@@ -6,17 +6,17 @@ const makeDiffStructure = (objectBefore, objectAfter) => {
   const diffStructure = keys.map((key) => {
     if (!Object.hasOwn(objectBefore, key)) {
       return {
-        key, value: objectAfter[key], status: 'added', children: [],
+        key, value: objectAfter[key], status: 'added',
       };
     }
     if (!Object.hasOwn(objectAfter, key)) {
       return {
-        key, value: objectBefore[key], status: 'deleted', children: [],
+        key, value: objectBefore[key], status: 'deleted',
       };
     }
     if (objectBefore[key] === objectAfter[key]) {
       return {
-        key, value: objectBefore[key], status: 'unmodified', children: [],
+        key, value: objectBefore[key], status: 'unmodified',
       };
     }
     if (_.isObject(objectBefore[key]) && objectBefore[key] !== null
@@ -24,10 +24,10 @@ const makeDiffStructure = (objectBefore, objectAfter) => {
       return { key, status: 'nested', children: makeDiffStructure(objectBefore[key], objectAfter[key]) };
     }
     return [{
-      key, value: objectBefore[key], status: 'deleted', children: [],
+      key, value: objectBefore[key], status: 'deleted',
     },
     {
-      key, value: objectAfter[key], status: 'added', children: [],
+      key, value: objectAfter[key], status: 'added',
     },
     ];
   });
