@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { cwd } from 'node:process';
 import path from 'path';
-// import _ from 'lodash';
 import parse from './parser.js';
 import stylish from './formatters/stylish.js';
 import getFormatterName from './formatters/index.js';
