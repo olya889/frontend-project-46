@@ -6,7 +6,7 @@ const parse = (file, extension) => {
   } if (extension === '.yml' || extension === '.yaml') {
     return yaml.load(file);
   }
-  return '';
+  throw new Error(`Invalid extension - ${extension}`);
 };
 
 export default parse;
