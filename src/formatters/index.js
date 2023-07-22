@@ -9,7 +9,10 @@ const getFormatterName = (formatName) => {
   if (formatName === 'json') {
     return json;
   }
-  return stylish;
+  if (formatName === 'stylish' || formatName === undefined) {
+    return stylish;
+  }
+  throw new Error(`Invalid formatter - ${formatName}`);
 };
 
 export default getFormatterName;
