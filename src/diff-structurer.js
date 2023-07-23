@@ -23,13 +23,9 @@ const makeDiffStructure = (objectBefore, objectAfter) => {
         && _.isObject(objectAfter[key]) && objectAfter[key] !== null) {
       return { key, status: 'nested', children: makeDiffStructure(objectBefore[key], objectAfter[key]) };
     }
-    return [{
-      key, value: objectBefore[key], status: 'deleted',
-    },
-    {
-      key, value: objectAfter[key], status: 'added',
-    },
-    ];
+    return {
+      key, previousValue: objectBefore[key], value: objectAfter[key], status: 'modified',
+    };
   });
   return diffStructure;
 };

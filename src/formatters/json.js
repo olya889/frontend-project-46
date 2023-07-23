@@ -19,11 +19,10 @@ const json = (structureOfDiff) => {
     const lines = structure
       .map((element) => {
         const {
-          key, value, status, children,
+          key, previousValue, value, status, children,
         } = element;
-        if (Array.isArray(element)) {
-          const [element1, element2] = element;
-          return `${currentIndent}"${element1.key}": {\n${valueIntend}"value": ${makeDataAsString(element2.value, depth + 1)},\n${valueIntend}"initial value": ${makeDataAsString(element1.value, depth + 1)},\n${valueIntend}"status": "updated"\n${bracketIntend}}`;
+        if (status === 'modified') {
+          return `${currentIndent}"${key}": {\n${valueIntend}"value": ${makeDataAsString(value, depth + 1)},\n${valueIntend}"initial value": ${makeDataAsString(previousValue, depth + 1)},\n${valueIntend}"status": "updated"\n${bracketIntend}}`;
         }
         if (status === 'unmodified') {
           return `${currentIndent}"${key}": ${makeDataAsString(value, depth + 1)}`;

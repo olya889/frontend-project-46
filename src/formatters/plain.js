@@ -12,11 +12,10 @@ const plain = (structureOfDiff) => {
     const lines = structure
       .map((element) => {
         const {
-          key, value, status, children,
+          key, previousValue, value, status, children,
         } = element;
-        if (Array.isArray(element)) {
-          const [element1, element2] = element;
-          return `Property '${propertie}${element1.key}' was updated. From ${makeDataAsString(element1.value)} to ${makeDataAsString(element2.value)}`;
+        if (status === 'modified') {
+          return `Property '${propertie}${key}' was updated. From ${makeDataAsString(previousValue)} to ${makeDataAsString(value)}`;
         }
         if (status === 'added') {
           return `Property '${propertie}${key}' was added with value: ${makeDataAsString(value)}`;

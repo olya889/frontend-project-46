@@ -14,7 +14,7 @@ const stylish = (structureOfDiff) => {
     const leftShift = ' '.repeat(currentDepth * 4 - 2);
     const formattedResult = diffStructure.reduce((acc, element) => {
       const {
-        key, value, status, children,
+        key, previousValue, value, status, children,
       } = element;
       if (status === 'added') {
         return `${acc}\n${leftShift}+ ${key}:${makeDataAsString(value, currentDepth + 1)}`;
@@ -27,6 +27,9 @@ const stylish = (structureOfDiff) => {
       }
       if (status === 'nested') {
         return `${acc}\n${leftShift}  ${key}: {${iter(children, currentDepth + 1)}\n${bracketInd}}`;
+      }
+      if (status === 'modified') {
+        return `${acc}\n${leftShift}- ${key}:${makeDataAsString(previousValue, currentDepth + 1)}\n${leftShift}+ ${key}:${makeDataAsString(value, currentDepth + 1)}`;
       }
       return `${acc}${iter(element, currentDepth)}`;
     }, '');
