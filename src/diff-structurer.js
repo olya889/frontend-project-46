@@ -19,11 +19,11 @@ const makeDiffStructure = (objectBefore, objectAfter) => {
       });
     } else if (_.isObject(objectBefore[key]) && objectBefore[key] !== null
         && _.isObject(objectAfter[key]) && objectAfter[key] !== null) {
-          diffStructure.push({ key, status: 'nested', children: makeDiffStructure(objectBefore[key], objectAfter[key]) });
+      diffStructure.push({ key, status: 'nested', children: makeDiffStructure(objectBefore[key], objectAfter[key]) });
     } else {
-    diffStructure.push({
-      key, previousValue: objectBefore[key], value: objectAfter[key], status: 'modified',
-    });
+      diffStructure.push({
+        key, previousValue: objectBefore[key], value: objectAfter[key], status: 'modified',
+      });
     }
   });
   return diffStructure;
